@@ -5,11 +5,12 @@ class Eliminator(Character):
     def __init__(self, name):
         super().__init__(name, health=140, attack_power=25)  # Boost health and attack power
 
-    print("Select your Action:")
-    print("1. Sniper Rifle")
-    print("2. Pistol")
-    print("3. See_Apothecary")
-    print("4. Throw Krak Grenade")
+    def Chose_action(self):
+        print("Select your Action:")
+        print("1. Sniper Rifle")
+        print("2. Pistol")
+        print("3. See_Apothecary")
+        print("4. Throw Krak Grenade")
 
     def sniper_rifle(self, opponent):
         damage = self.attack_power * 2
@@ -20,7 +21,7 @@ class Eliminator(Character):
         opponent.health -= 20
         print(f"{self.name} shoots {opponent.name} with a Pistol for 20 damage!")
     
-    def See_Apothecary(self):
+    def see_apothecary(self):
         self.health = self.max_health
         print(f"{self.name} sees the Apothecary and heals for {self.max_health} health! Current health: {self.health}")
     

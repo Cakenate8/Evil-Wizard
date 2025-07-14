@@ -1,4 +1,8 @@
-
+from Lord_Bale import Lord_Bale
+from Intercessor import Intercessor
+from Devastator import Devastator
+from Eliminator import Eliminator
+from Primaris import Primaris
 
 def create_character():
     print("Choose your character class:")
@@ -26,19 +30,16 @@ def create_character():
 def battle(player, wizard):
     while wizard.health > 0 and player.health > 0:
         print("\n--- Your Turn ---")
-        print("1. Attack")
-        print("2. Use Special Ability")
-        print("3. Heal")
-        print("4. Attack")
+        player.Chose_action()
         
         choice = input("Choose an action: ")
 
         if choice == '1':
             player.attack(wizard)
         elif choice == '2':
-            player.special_ability(wizard)   
+            player.attack(wizard)   
         elif choice == '3':
-            player.heal(player)      
+            player.heal()    
         elif choice == '4':
             player.attack(wizard)
         else:
@@ -72,8 +73,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-    from Lord_Bale import Lord_Bale
-    from Intercessor import Intercessor
-    from Devastator import Devastator
-    from Eliminator import Eliminator
-    from Primaris import Primaris

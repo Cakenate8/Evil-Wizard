@@ -5,11 +5,12 @@ class Primaris(Character):
     def __init__(self, name):
         super().__init__(name, health=250, attack_power=40)
 
-    print("Select your Action:")
-    print("1. Thunder Hammer")
-    print("2. Heavy Bolter")
-    print("3. See_Apothecary")
-    print("4. Pistol")
+    def Chose_action(self):
+        print("Select your Action:")
+        print("1. Thunder Hammer")
+        print("2. Heavy Bolter")
+        print("3. See_Apothecary")
+        print("4. Pistol")
 
     def thunder_hammer(self, opponent):
         damage = self.attack_power * 3
@@ -21,7 +22,7 @@ class Primaris(Character):
         opponent.health -= damage
         print(f"{self.name} attacks {opponent.name} with a Heavy Bolter for {damage} damage!")
     
-    def See_Apothecary(self):
+    def see_apothecary(self):
         self.health = self.max_health
         print(f"{self.name} sees the Apothecary and heals for {self.max_health} health! Current health: {self.health}")
     

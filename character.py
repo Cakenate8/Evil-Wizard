@@ -14,5 +14,7 @@ class Character:
     def display_stats(self):
         print(f"{self.name}'s Stats - Health: {self.health}/{self.max_health}, Attack Power: {self.attack_power}")
 
-    
+    def heal(self):
+        self.health = self.max_health
+        print(f"{self.name} heals to full health! Current health: {self.health}")
 
