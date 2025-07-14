@@ -1,7 +1,29 @@
-from character import Character
+from Character import Character
+import random
 
-class Intercesstor(Character):
+class Intercessor(Character):
     def __init__(self, name):
-        super().__init__(name, health=140, attack_power=25)  # Boost health and attack power
+        super().__init__(name, health=150, attack_power=20)
 
-    # Add your power attack method here
+    print("Select your action:")
+    print("1. Chain Sword")
+    print("2. Bolter")
+    print("3. See_Apothecary")
+    print("4. Throw Krak Grenade")
+
+    def chain_sword(self, opponent):
+        damage = self.attack_power 
+        print(f"{self.name} attacks {opponent.name} with a Chain Sword for {damage} damage!")
+    
+    def bolter(self, opponent):
+        damage = self.attack_power * random.randint(1,3)
+        print(f"{self.name} attacks {opponent.name} with a Bolter for {damage} damage!")
+    
+    def See_Apothecary(self):
+        self.health = self.max_health
+        print(f"{self.name} sees the Apothecary and heals for {self.max_health} health! Current health: {self.health}")
+
+    def throw_krak_grenade(self, opponent):
+        damage = random.randint(1, self.attack_power * 2)
+        opponent.health -= damage
+        print(f"{self.name} throws a Krak Grenade at {opponent.name} for {damage} damage!")

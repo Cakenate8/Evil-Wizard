@@ -1,10 +1,17 @@
-from character import Character
+from Character import Character
+import random
 
-class EvilWizard(Character):
+
+class Lord_Bale(Character):
     def __init__(self, name):
-        super().__init__(name, health=150, attack_power=15)  # Lower attack power
+        super().__init__(name, health=200, attack_power=25)
     
-    # Evil Wizard's special ability: it can regenerate health
+    
     def regenerate(self):
-        self.health += 5  # Lower regeneration amount
-        print(f"{self.name} regenerates 5 health! Current health: {self.health}")
+        self.health += 7  # Lower regeneration amount
+        print(f"{self.name} regenerates 7 health! Current health: {self.health}")
+
+    def Special_Attack(self,opponent):
+        Damage = random.randint(1,{self.attack_power})
+        opponent.health -= Damage
+        print(f"Lord Bale unleashes a special attack on {opponent.name} for {Damage} damage!")
