@@ -8,8 +8,8 @@ class Lord_Bale(Character):
     
     
     def regenerate(self):
-        self.health += 7  # Lower regeneration amount
-        print(f"{self.name} regenerates 7 health! Current health: {self.health}")
+        self.health += 10
+        print(f"{self.name} regenerates 10 health! Current health: {self.health}")
 
     def Special_Attack(self,opponent):
         Damage = random.randint(1,{self.attack_power})

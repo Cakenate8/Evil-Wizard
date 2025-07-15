@@ -35,13 +35,13 @@ def battle(player, wizard):
         choice = input("Choose an action: ")
 
         if choice == '1':
-            player.attack(wizard)
+            player.basic_attack(wizard)
         elif choice == '2':
-            player.attack(wizard)   
+            player.special_attack(wizard)   
         elif choice == '3':
-            player.heal()    
+            player.see_apothecary()    
         elif choice == '4':
-            player.attack(wizard)
+            player.throw_krak_grenade(wizard)
         else:
             print("Invalid choice, try again.")
             continue
@@ -57,7 +57,7 @@ def battle(player, wizard):
             break
 
         if wizard.health <= 0:
-            print(f"The wizard {wizard.name} has been defeated by {player.name}!")
+            print(f"{wizard.name} has been defeated by {player.name}!")
             break
 
 def main():

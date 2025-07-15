@@ -3,7 +3,7 @@ import random
 
 class Devastator(Character):
     def __init__(self, name):
-        super().__init__(name, health=100, attack_power=35)
+        super().__init__(name, health=175, attack_power=50)
 
     def Chose_action(self):
         print("Select your Action:")
@@ -12,12 +12,12 @@ class Devastator(Character):
         print("3. See_Apothecary")
         print("4.Throw Krak Grenade")
 
-    def storm_bolter(self, opponent):
+    def basic_attack(self, opponent):
         damage = self.attack_power * 2
         opponent.health -= damage
         print(f"{self.name} attacks {opponent.name} with a Storm Bolter for {damage} damage!")
 
-    def multi_melta(self, opponent):
+    def special_attack(self, opponent):
         damage = self.attack_power * 3
         opponent.health -= damage
         print(f"{self.name} attacks {opponent.name} with a Multi-melta for {damage} damage!")  

@@ -3,7 +3,7 @@ import random
 
 class Intercessor(Character):
     def __init__(self, name):
-        super().__init__(name, health=150, attack_power=20)
+        super().__init__(name, health=150, attack_power=25)
 
     def Chose_action(self):
         print("Select your Action:")
@@ -13,11 +13,11 @@ class Intercessor(Character):
         print("4. Throw Krak Grenade")
 
 
-    def chain_sword(self, opponent):
+    def basic_attack(self, opponent):
         damage = self.attack_power 
         print(f"{self.name} attacks {opponent.name} with a Chain Sword for {damage} damage!")
     
-    def bolter(self, opponent):
+    def special_attack(self, opponent):
         damage = self.attack_power * random.randint(1,3)
         print(f"{self.name} attacks {opponent.name} with a Bolter for {damage} damage!")
     

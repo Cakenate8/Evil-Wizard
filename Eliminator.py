@@ -3,7 +3,7 @@ import random
 
 class Eliminator(Character):
     def __init__(self, name):
-        super().__init__(name, health=140, attack_power=25)  # Boost health and attack power
+        super().__init__(name, health=175, attack_power=40)
 
     def Chose_action(self):
         print("Select your Action:")
@@ -12,12 +12,14 @@ class Eliminator(Character):
         print("3. See_Apothecary")
         print("4. Throw Krak Grenade")
 
-    def sniper_rifle(self, opponent):
+    
+
+    def basic_attack(self, opponent):
         damage = self.attack_power * 2
         opponent.health -= damage
         print(f"{self.name} attacks {opponent.name} with a Sniper Rifle for {damage} damage!")
 
-    def pistol(self, opponent):
+    def special_attack(self, opponent):
         opponent.health -= 20
         print(f"{self.name} shoots {opponent.name} with a Pistol for 20 damage!")
     
@@ -29,3 +31,5 @@ class Eliminator(Character):
         damage = random.randint(1, self.attack_power * 2)
         opponent.health -= damage
         print(f"{self.name} throws a Krak Grenade at {opponent.name} for {damage} damage!")
+
+    
