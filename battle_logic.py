@@ -1,8 +1,8 @@
-from Lord_Bale import Lord_Bale
-from Intercessor import Intercessor
-from Devastator import Devastator
-from Eliminator import Eliminator
-from Primaris import Primaris
+from characters.lord_bale import lord_bale
+from characters.intercessor import intercessor
+from characters.devastator import devastator
+from characters.eliminator import eliminator
+from characters.primaris import primaris
 
 def create_character():
     print("Choose your character class:")
@@ -15,18 +15,18 @@ def create_character():
     name = input("Enter your character's name: ")
 
     if class_choice == '1':
-        return Intercessor(name)
+        return intercessor(name)
     elif class_choice == '2':
-        return Devastator(name)
+        return devastator(name)
     elif class_choice == '3':
-        return Eliminator(name)
+        return eliminator(name)
     elif class_choice == '4':
-        return Primaris(name)
+        return primaris(name)
     else:
         print("Invalid choice, try again.")
      
 
-# Battle function with user menu for actions
+
 def battle(player, wizard):
     while wizard.health > 0 and player.health > 0:
         print("\n--- Your Turn ---")
@@ -46,7 +46,7 @@ def battle(player, wizard):
             print("Invalid choice, try again.")
             continue
 
-        # Evil Wizard's turn to attack and regenerate
+        
         if wizard.health > 0:
             wizard.regenerate()
             wizard.attack(player)
@@ -65,7 +65,7 @@ def main():
     player = create_character()
 
     
-    wizard = Lord_Bale("The Chaos Wizard")
+    wizard = lord_bale("The Chaos Wizard")
 
     
     battle(player, wizard)
